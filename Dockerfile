@@ -32,8 +32,9 @@ RUN wget --quiet \
 RUN conda update --quiet --yes conda \
   && conda create -y -n py36 python=3.6 \
   && /bin/bash -c "source activate py36 \
-  && conda install pip numpy scipy nose hdf5 pandas pytest-cov sphinx xarray matplotlib \
+  && conda install pip numpy scipy nose hdf5 pandas pytest-cov sphinx xarray matplotlib line_profiler \
   && conda install -c conda-forge utm --no-deps \
+  && conda install -c conda-forge ruamel.yaml \
   && pip install sphinx-fortran --no-deps"
 
 RUN echo 'ulimit -s unlimited' >> .bashrc
