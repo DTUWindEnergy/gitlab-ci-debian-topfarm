@@ -1,4 +1,5 @@
 # Docker file for gitlab CI test image
+# v.1.0
 
 FROM buildpack-deps:jessie
 
